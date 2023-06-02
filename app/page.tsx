@@ -1,9 +1,10 @@
 "use client";
-import { MutableRefObject, RefObject, useRef } from "react";
+import {useRef } from "react";
 import Lottie from "lottie-react";
 import animation from "../public/jn3nxNS3Rk.json";
-import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
+import {  Parallax, ParallaxLayer } from "@react-spring/parallax";
 import classes from "./page.module.scss";
+import Header from "./components/Header";
 
 export default function Home() {
 
@@ -15,7 +16,10 @@ export default function Home() {
 
   return (
     <main className={classes.main}>
-      <Parallax pages={2.2} ref={paralaxRef}>
+      <Parallax pages={2.2} ref={paralaxRef} className={classes['parallax']}>
+      <ParallaxLayer sticky={{ start: 0, end: 0 }}>
+        <Header />
+        </ParallaxLayer>
         <ParallaxLayer
           offset={0}
           speed={2.5}
@@ -26,7 +30,7 @@ export default function Home() {
             filter: "grayscale(100%)",
           }}
         />
-        <ParallaxLayer sticky={{ start: 0, end: 0.82 }}>
+        <ParallaxLayer sticky={{ start: 0.06, end: 0.82 }}>
           <article className={classes.article}>
             <h2>What is this about ? </h2>
             <p>
@@ -76,6 +80,7 @@ export default function Home() {
             filter: "grayscale(100%)",
           }}
         ></ParallaxLayer>
+        
       </Parallax>
     </main>
   );
