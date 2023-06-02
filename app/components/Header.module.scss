@@ -1,7 +1,7 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
 .header {
-  width: 100vw;
+  width: 100%;
   height: 80px;
   padding: 0em 5em;
   background-color: transparent;
@@ -9,21 +9,43 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-  nav {
-    ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
-      li {
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    li {
+      text-decoration: none;
+      color: white;
+      font-size: $font-l;
+      cursor: pointer;
+      a {
         text-decoration: none;
         color: white;
-        font-size: $font-l;
-        cursor: pointer;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 35px;
+          left: 0px;
+          height: 3px;
+          width: 0%;
+          background-color: white;
+          color: white;
+          transition: 300ms ease-in-out;
+        }
       }
     }
+  }
+}
+
+.active {
+  a::before {
+    width: 100%!important;
   }
 }
