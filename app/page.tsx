@@ -1,5 +1,6 @@
 "use client";
-import * as React from "react";
+import Lottie from 'lottie-react';
+import animation from '../public/jn3nxNS3Rk.json';
 import { Parallax , ParallaxLayer } from "@react-spring/parallax"
 
 
@@ -8,10 +9,6 @@ import classes from './page.module.scss';
 
 
 export default function Home() {
-
-
-
-
 
   return (
     <main className={classes.main}>
@@ -44,6 +41,9 @@ export default function Home() {
               <p>Choose te blog topic from header ! I hope you will like my page</p>
         </article>
         </ParallaxLayer>
+        <ParallaxLayer sticky={{start:1 , end:2.4}}>
+             <Lottie animationData={animation} style={{height:'150px' , fontWeight:'bolder' , cursor:'pointer'}} />
+            </ParallaxLayer>
         <ParallaxLayer
           offset={0.999}
           speed={1}
@@ -55,6 +55,7 @@ export default function Home() {
           }}
         ></ParallaxLayer>
      </Parallax>
+
     </main>
   )
 }
