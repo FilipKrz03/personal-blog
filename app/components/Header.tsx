@@ -1,4 +1,5 @@
 import classes from './Header.module.scss';
+import Link from 'next/link';
 
 const Header = () => {
 
@@ -6,7 +7,7 @@ const Header = () => {
         <header className={classes.header}>
             <nav>
                 <ul>
-                    <li>My Posts</li>
+                   <Link href='/posts'><li>My Posts</li></Link>
                     <li>Technology</li>
                     <li>Funny</li>
                     <li>Curiosities</li>
