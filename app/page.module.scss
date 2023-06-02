@@ -1,8 +1,9 @@
+@import './variables.scss';
+
 .main{
     width: 100vw;
     h2{
         text-align: center;
-        font-size: 80px;
     }
 
     .article{
@@ -12,7 +13,7 @@
         flex-direction: column;
         gap: 50px;
         h2{
-            font-size: 60px;
+            font-size: $font-xxl;
         }
     }
 
@@ -23,4 +24,15 @@
 }
 .third{
     padding-top: 70vh!important;
+}
+
+
+@include media-m{
+    .main{
+        .article{
+            h2{
+                font-size: $font-l;
+            }
+        }
+    }
 }

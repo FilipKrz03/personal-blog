@@ -1,0 +1,8 @@
+$font-l:25px;
+$font-xxl:60px;
+
+@mixin media-m{
+    @media (max-width:700px) {
+        @content;
+    }
+}
