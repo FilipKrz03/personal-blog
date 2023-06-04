@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import Lottie , {LottieRefCurrentProps} from "lottie-react";
-import welcome from '../../../public/welcome.json';
+import welcome from '../../../../public/welcome.json';
 
 const StartAnimation = () => {
 

@@ -1,5 +1,5 @@
 import  {useRef} from 'react'
-import StartAnimation from './components/StartAnimation';
+import StartAnimation from './components/StartAnimation/StartAnimation';
 import getMainPost from '@/lib/getMainPost';
 import getMainSmallPosts from '@/lib/getMainSmallPosts';
 
