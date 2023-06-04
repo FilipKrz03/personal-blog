@@ -1,16 +1,17 @@
 "use client";
-import React from 'react'
+import React , {useRef} from 'react'
 import getMainPost from '@/lib/getMainPost';
-import classes from './page.module.scss';
+import getMainSmallPosts from '@/lib/getMainSmallPosts';
 import Lottie , {LottieRefCurrentProps} from "lottie-react";
 import welcome from '../../public/welcome.json';
 import { motion } from "framer-motion";
-import { useRef } from 'react';
+import classes from './page.module.scss';
+
 
 export default async function MyPosts() {
 
   const welcomeRef = useRef<LottieRefCurrentProps>(null);
-  const data = await getMainPost();
+  const data = await getMainSmallPosts();
   console.log(data);
 
   return (
