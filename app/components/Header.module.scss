@@ -3,7 +3,7 @@
 .header {
   z-index: 100!important;
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 80px;
   padding: 0em 5em;
   background-color: transparent;
@@ -72,6 +72,7 @@
 @include media-m {
   .header {
     padding: 0;
+    width: 100vw;
     ul {
       position: absolute;
       transform: translateY(-500px);
