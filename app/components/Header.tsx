@@ -20,7 +20,7 @@ const Header = () => {
               className={link.path === pathname ? classes['active-link'] : ""}
               whileHover={{ scale: 1.3, filter: "blur(0.5px)" }}
               whileTap={{scale:0.85}}
-              animate={{y:0}} initial={{y:-30}}
+              animate={{scale:1}} initial={{scale:0}}
             >
               <Link href={link.path}>{link.title}</Link>
             </motion.li>

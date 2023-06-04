@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main className={classes.main}>
       <Parallax pages={2.2} ref={paralaxRef} className={classes['parallax']}>
-      <ParallaxLayer sticky={{ start: 0, end: 0 }}>
+      <ParallaxLayer sticky={{ start: 0, end: 0 }} style={{zIndex:10}}>
         <Header />
         </ParallaxLayer>
         <ParallaxLayer
@@ -31,7 +31,7 @@ export default function Home() {
           }}
         />
         <ParallaxLayer sticky={{ start: 0.06, end: 0.82 }}>
-          <article className={classes.article}>
+          <article className={`${classes.article} ${classes.first}`}>
             <h2>What is this about ? </h2>
             <p>
               This is my blog page where you will find articles covered by me
@@ -56,14 +56,14 @@ export default function Home() {
             </p>
           </article>
         </ParallaxLayer>
-        <ParallaxLayer sticky={{ start: 1, end: 2.4 }}>
+        <ParallaxLayer sticky={{ start: 1, end: 2.4 }} style={{zIndex:11}}>
           <Lottie
             animationData={animation}
             style={{
               height: "150px",
               fontWeight: "bolder",
               cursor: "pointer",
-              zIndex: "-1",
+              zIndex: 11,
             }}
             onClick={() => {
               paralaxRef.current.scrollTo(0);

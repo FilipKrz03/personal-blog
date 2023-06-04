@@ -1,8 +1,9 @@
 @import "../variables.scss";
 
 .header {
+  z-index: 100!important;
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 80px;
   padding: 0em 5em;
   background-color: transparent;
@@ -20,6 +21,7 @@
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    transition: 300ms ease-in-out;
     li {
       text-decoration: none;
       color: white;
@@ -45,7 +47,7 @@
   }
   .burger {
     position: absolute;
-    right: 30px;
+    right: 50px;
     background: transparent;
     border: none;
     outline: none;
@@ -72,20 +74,39 @@
     padding: 0;
     ul {
       position: absolute;
-      top: -500px;
+      transform: translateY(-500px);
+      li{
+        display: none;
+      }
+    
       &.active{
+        transform: translateY(0px);
         padding: 2em;
         top: 0px;
-        height: 50vh;
-        width: 100vw;
         flex-direction: column;
         align-items: center;
-        background-color: black;
-        
+        height: 50vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 1);    
+        li{
+          display: block;
+        }
       }
     }
     .burger {
       display: block;
+      &.active{
+        .line:nth-child(2){
+          transform: scale(0);
+          display: none;
+        }
+        .line:nth-child(1){
+          transform:rotate(-50deg) translateX(-8px) translateY(-2px) ;
+        }
+        .line:nth-child(3){
+          transform: rotate(-305deg) translateX(-8px) translateY(-2px);
+        }
+      }
     }
   }
 }

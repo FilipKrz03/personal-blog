@@ -7,7 +7,6 @@
     }
 
     .article{
-        padding-top: 50vh;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -17,6 +16,10 @@
         }
     }
 
+}
+
+.first{
+    padding-top: 50vh!important;
 }
 
 .second{
