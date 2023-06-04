@@ -1,24 +1,20 @@
 "use client";
-import {useRef } from "react";
+import { useRef } from "react";
 import Lottie from "lottie-react";
 import animation from "../public/jn3nxNS3Rk.json";
-import {  Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import classes from "./page.module.scss";
 import Header from "./components/Header";
 
 export default function Home() {
-
   
-  
-  const paralaxRef = useRef<any>();
-  // could not find info about type of ParallaxElement
-
+  const paralaxRef = useRef<IParallax>(null);
 
   return (
     <main className={classes.main}>
-      <Parallax pages={2.2} ref={paralaxRef} className={classes['parallax']}>
-      <ParallaxLayer sticky={{ start: 0, end: 0 }} style={{zIndex:10}}>
-        <Header />
+      <Parallax pages={2.2} ref={paralaxRef} className={classes["parallax"]}>
+        <ParallaxLayer sticky={{ start: 0, end: 0 }} style={{ zIndex: 10 }}>
+          <Header />
         </ParallaxLayer>
         <ParallaxLayer
           offset={0}
@@ -56,7 +52,7 @@ export default function Home() {
             </p>
           </article>
         </ParallaxLayer>
-        <ParallaxLayer sticky={{ start: 1, end: 2.4 }} style={{zIndex:11}}>
+        <ParallaxLayer sticky={{ start: 1, end: 2.4 }} style={{ zIndex: 11 }}>
           <Lottie
             animationData={animation}
             style={{
@@ -66,7 +62,9 @@ export default function Home() {
               zIndex: 11,
             }}
             onClick={() => {
-              paralaxRef.current.scrollTo(0);
+              if (paralaxRef.current !== null) {
+                paralaxRef.current.scrollTo(0);
+              }
             }}
           />
         </ParallaxLayer>
@@ -80,7 +78,6 @@ export default function Home() {
             filter: "grayscale(100%)",
           }}
         ></ParallaxLayer>
-        
       </Parallax>
     </main>
   );
