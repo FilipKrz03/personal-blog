@@ -12,10 +12,10 @@ export default function MyPosts() {
 
   return (
     <div className={classes.page}>
-    <motion.div animate={{y:-100}} initial={{y:-340}} transition={{duration:0.2}} className={classes.animation}>
+    <motion.div animate={{y:-30}} initial={{y:-340}} transition={{duration:0.2}} className={classes.animation}>
       <Lottie lottieRef={welcomeRef} onComplete={()=>{
         welcomeRef.current?.destroy()
-      }} animationData={welcome} style={{width:'300px' , zIndex:20}} loop={false}  />
+      }} animationData={welcome} style={{width:'250px' , zIndex:20}} loop={false}  />
     </motion.div>
     </div>
   )

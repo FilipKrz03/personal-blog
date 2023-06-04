@@ -1,3 +1,4 @@
+import { useState } from "react";
 import classes from "./Header.module.scss";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -7,14 +8,16 @@ import { navLinks } from "../helpers/navLinks";
 const Header = () => {
   const pathname = usePathname();
 
+  const [isMobileMenuActive , setIsMobileMenuActive] = useState<boolean>(false);
+
   return (
     <header className={classes.header}>
-      <ul>
+      <ul className={`${isMobileMenuActive ? classes.active : ''}`}>
         {navLinks.map((link) => {
           return (
             <motion.li 
               key={link.title}
-              className={link.path === pathname ? classes.active : ""}
+              className={link.path === pathname ? classes['active-link'] : ""}
               whileHover={{ scale: 1.3, filter: "blur(0.5px)" }}
               whileTap={{scale:0.85}}
               animate={{y:0}} initial={{y:-30}}
@@ -24,6 +27,13 @@ const Header = () => {
           );
         })}
       </ul>
+      <button className={`${classes.burger} ${isMobileMenuActive ? classes.active : ''} `} onClick={()=>{
+        setIsMobileMenuActive(prevState => !prevState);
+      }}>
+        <div className={classes.line}/>
+        <div className={classes.line}/>
+        <div className={classes.line}/>
+      </button>
     </header>
   );
 };

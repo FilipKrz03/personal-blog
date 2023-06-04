@@ -1,6 +1,7 @@
 @import "../variables.scss";
 
 .header {
+  position: relative;
   width: 100%;
   height: 80px;
   padding: 0em 5em;
@@ -42,10 +43,49 @@
       }
     }
   }
+  .burger {
+    position: absolute;
+    right: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: none;
+    .line {
+      margin-top: 10px;
+      width: 45px;
+      height: 3px;
+      outline: none;
+      background-color: white;
+    }
+  }
 }
 
-.active {
+.active-link {
   a::before {
-    width: 100%!important;
+    width: 100% !important;
+  }
+}
+
+@include media-m {
+  .header {
+    padding: 0;
+    ul {
+      position: absolute;
+      top: -500px;
+      &.active{
+        padding: 2em;
+        top: 0px;
+        height: 50vh;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        
+      }
+    }
+    .burger {
+      display: block;
+    }
   }
 }
