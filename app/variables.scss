@@ -1,5 +1,8 @@
+$font-m:22px;
 $font-l:25px;
 $font-xxl:60px;
+$very-dark-blue:#0d1b2a;
+$dark-blue:#1b263b;
 
 @mixin media-m{
     @media (max-width:700px) {
