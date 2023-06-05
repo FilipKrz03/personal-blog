@@ -13,7 +13,20 @@ type Params = {
 const MainPosts  = ({params : {mainPost , mainSmallPosts}}:Params) => {
     return(
         <div className={classes.post}>
-            Hello
+          <div className={classes.left}>
+            <img src={"http:" + mainPost.image.url} alt={mainPost.image.title} />
+            <p>{mainPost.fields.title}</p>
+          </div>
+          <div className={classes.right}>
+            <div className={classes['right-item']}>
+                <img src={"http:" + mainSmallPosts[0].image.url} alt={mainPost.image.title} />
+                <p>{mainSmallPosts[0].fields.title}</p>
+            </div>
+            <div className={classes['right-item']}>
+                <img src={"http:" + mainSmallPosts[1].image.url} alt={mainPost.image.title} />
+                <p>{mainSmallPosts[1].fields.title}</p>
+            </div>
+            </div>
         </div>
     )
 

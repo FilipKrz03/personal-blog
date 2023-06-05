@@ -1,0 +1,40 @@
+@import '../../../variables.scss';
+
+.post{
+    margin-top: 30px;
+    background-color: #343a40;
+    color: white;
+    padding: 1em;
+    height: 85vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    p{
+        font-weight: bolder;
+        font-size: $font-l;
+
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        img{
+            aspect-ratio: 1/0.975;
+            width: 40vw;
+        }
+    }
+
+    .right{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &-item{
+            img{
+            aspect-ratio: 2.4/1;
+            width: 40vw;
+            }
+        }
+    }
+   
+}
