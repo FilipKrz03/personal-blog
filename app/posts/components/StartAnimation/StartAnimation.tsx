@@ -12,7 +12,7 @@ const StartAnimation = () => {
       animate={{ y: -90}}
       initial={{ y: -340 }}
       transition={{ duration: 0.2 }}
-      style={{ position: "absolute" , left:'-15px' }}
+      style={{ position: "absolute" , left:'-15px'}}
     >
       <Lottie
         lottieRef={welcomeRef}
