@@ -1,17 +1,36 @@
-"use client";
-import getSinglePost from "@/lib/getSinglePost"
-import classes from './page.module.scss';
+import getSinglePost from "@/lib/getSinglePost";
 import { PostData } from "@/app/types/PostData";
 import Article from "./components/Article";
+import getMainSmallPosts from "@/lib/getMainSmallPosts";
+import getMainPost from "@/lib/getMainPost";
 
-export default async function postDetail({params}:{params:{postId:string}}) {
+type Params = {
+  params: {
+    postId: string;
+  };
+};
 
-  const postData:PostData = await getSinglePost(params.postId);
-  console.log(postData);
+export async function generateMetadata({ params: { postId } }: Params) {
+  const postData: PostData = await getSinglePost(postId);
 
-  return (
-     <div>
-      <Article data={postData} />
-     </div>
-  )
+  return {
+    title: postData.image.title,
+  };
+}
+
+export default async function postDetail({ params: { postId } }: Params) {
+  const postData: PostData = await getSinglePost(postId);
+
+  return <Article data={postData} />;
+}
+
+export async function generateStaticParams() {
+  const smallPosts: PostData[] = await getMainSmallPosts();
+  const mainPost: PostData = await getMainPost();
+
+  const posts = [...smallPosts, mainPost];
+
+  return posts.map((post) => {
+    return post.id;
+  });
 }
