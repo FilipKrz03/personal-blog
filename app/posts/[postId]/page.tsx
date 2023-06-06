@@ -1,12 +1,17 @@
 "use client";
 import getSinglePost from "@/lib/getSinglePost"
+import classes from './page.module.scss';
+import { PostData } from "@/app/types/PostData";
+import Article from "./components/Article";
 
 export default async function postDetail({params}:{params:{postId:string}}) {
 
-  const postData = await getSinglePost(params.postId);
+  const postData:PostData = await getSinglePost(params.postId);
   console.log(postData);
 
   return (
-    <div>{params.postId}</div>
+     <div>
+      <Article data={postData} />
+     </div>
   )
 }

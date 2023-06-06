@@ -1,0 +1,16 @@
+@import '../../../variables.scss';
+
+.article{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    .desc{
+        font-size: $font-m;
+    }
+    img{
+        width: 50vw;
+        height: 30vh;
+    }
+}

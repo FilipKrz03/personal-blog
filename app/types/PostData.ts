@@ -1,6 +1,6 @@
 export type PostData = {
     fields : {
-        artice:string , 
+        article:string , 
         postImage:any , 
         shortDescription:string , 
         title:string ,
