@@ -1,7 +1,12 @@
+"use client";
+import getSinglePost from "@/lib/getSinglePost"
 
+export default async function postDetail({params}:{params:{postId:string}}) {
 
-export default function postDetail() {
+  const postData = await getSinglePost(params.postId);
+  console.log(postData);
+
   return (
-    <div>page</div>
+    <div>{params.postId}</div>
   )
 }
