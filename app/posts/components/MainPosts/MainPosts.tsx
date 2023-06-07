@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { PostData } from "@/app/types/PostData";
 import classes from "./MainPosts.module.scss";
@@ -13,7 +14,6 @@ type Params = {
 };
 
 const MainPosts = ({ params: { mainPost, mainSmallPosts } }: Params) => {
-    
   const router = useRouter();
 
   return (
@@ -26,7 +26,14 @@ const MainPosts = ({ params: { mainPost, mainSmallPosts } }: Params) => {
           router.push("posts/" + mainPost.id);
         }}
       >
-        <img src={"http:" + mainPost.image.url} alt={mainPost.image.title} />
+        <Image
+          src={"http:" + mainPost.image.url}
+          alt={mainPost.image.title}
+          width={0}
+          height={0}
+          sizes="37vw"
+          style={{ aspectRatio: "1/0.975", width: "37vw", height: "auto" }}
+        />
         <p>{mainPost.fields.title}</p>
       </motion.div>
       <div className={classes.right}>
@@ -38,9 +45,13 @@ const MainPosts = ({ params: { mainPost, mainSmallPosts } }: Params) => {
             router.push("posts/" + mainSmallPosts[0].id);
           }}
         >
-          <img
+          <Image
             src={"http:" + mainSmallPosts[0].image.url}
             alt={mainPost.image.title}
+            width={0}
+            height={0}
+            sizes="35vw"
+            style={{aspectRatio:'2.4/1' , width:'35vw' , height:'auto'}}
           />
           <p>{mainSmallPosts[0].fields.title}</p>
         </motion.div>
@@ -52,9 +63,13 @@ const MainPosts = ({ params: { mainPost, mainSmallPosts } }: Params) => {
             router.push("posts/" + mainSmallPosts[1].id);
           }}
         >
-          <img
+          <Image
             src={"http:" + mainSmallPosts[1].image.url}
             alt={mainPost.image.title}
+            width={0}
+            height={0}
+            sizes="35vw"
+            style={{aspectRatio:'2.4/1' , width:'36vw' , height:'auto'}}
           />
           <p>{mainSmallPosts[1].fields.title}</p>
         </motion.div>
