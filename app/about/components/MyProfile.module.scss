@@ -1,17 +1,41 @@
 @import '../../variables.scss';
 .info{
+    padding: 0em 2em;
     p{
-        font-size: $font-m;
+        font-size: $font-m;   
+        margin-bottom: 25px;
     }
     margin-top: 20px;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-direction: column;
     justify-content: space-between;
 
     .icons{
+    
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
+
+    .more{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .gradient{
+        background-image: linear-gradient(to right, #8360c3, #2ebf91);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@include media-m{
+    .info{
+    .more{
+        flex-direction: column;
+    }
+}
 }
