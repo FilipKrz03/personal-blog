@@ -6,6 +6,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
+
 type postData = {
   data: PostData;
 };
