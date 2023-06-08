@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { PostData } from '@/app/types/PostData';
 import classes from './PostItem.module.scss';
 
 const PostItem = ({fields , id , image}:PostData) => {
 
     return(
+        <Link href={'/posts/' + id}>
         <div className={classes.item}>
             <Image 
             src={'http:' + image.url}
@@ -16,6 +18,7 @@ const PostItem = ({fields , id , image}:PostData) => {
               />
             <p>{fields.title}</p>
         </div>
+        </Link>
     )
 
 }
