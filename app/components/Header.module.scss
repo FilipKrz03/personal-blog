@@ -55,7 +55,7 @@
     display: none;
     .line {
       margin-top: 10px;
-      width: 45px;
+      width: 30px;
       height: 3px;
       outline: none;
       background-color: white;
@@ -102,10 +102,10 @@
           display: none;
         }
         .line:nth-child(1){
-          transform:rotate(-50deg) translateX(-8px) translateY(-2px) ;
+          transform:rotate(-50deg) translateX(-8px) translateY(-1px) ;
         }
         .line:nth-child(3){
-          transform: rotate(-305deg) translateX(-8px) translateY(-2px);
+          transform: rotate(-315deg) translateX(-8px) translateY(-2px);
         }
       }
     }

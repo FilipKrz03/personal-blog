@@ -31,7 +31,6 @@ export default function Home() {
             <h2>What is this about ? </h2>
             <p>
               This is my blog page where you will find articles covered by me
-              some will be mine some will be articles that i like{" "}
             </p>
           </article>
         </ParallaxLayer>
