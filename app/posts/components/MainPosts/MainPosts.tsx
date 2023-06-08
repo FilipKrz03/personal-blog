@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -14,6 +13,7 @@ type Params = {
 };
 
 const MainPosts = ({ params: { mainPost, mainSmallPosts } }: Params) => {
+
   const router = useRouter();
 
   return (
