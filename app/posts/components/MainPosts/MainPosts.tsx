@@ -38,6 +38,7 @@ const MainPosts = ({ params: { mainPost, mainSmallPosts } }: Params) => {
             width={0}
             height={0}
             sizes="37vw"
+            priority={true}
             style={{ aspectRatio: "1/0.975", width: "37vw", height: "auto" }}
           />
           <p>{mainPost.fields.title}</p>
