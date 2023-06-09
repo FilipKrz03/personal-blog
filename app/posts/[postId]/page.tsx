@@ -1,11 +1,10 @@
 import getSinglePost from "@/lib/getSinglePost";
-import {Suspense} from 'react';
 import { PostData } from "@/app/types/PostData";
 import Article from "./components/Article";
 import getMainSmallPosts from "@/lib/getMainSmallPosts";
 import getMainPost from "@/lib/getMainPost";
 import getOtherPosts from "@/lib/getOtherPosts";
-import LoadingState from "@/app/components/LoadingState";
+
 
 type Params = {
   params: {
