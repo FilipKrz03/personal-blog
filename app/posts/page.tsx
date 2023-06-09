@@ -8,6 +8,9 @@ import classes from './page.module.scss';
 import OtherPosts from './components/OtherPosts/OtherPosts';
 
 
+export const revalidate = 60;
+
+
 export default async function MyPosts() {
 
 

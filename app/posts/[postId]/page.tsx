@@ -13,6 +13,8 @@ type Params = {
   };
 };
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params: { postId } }: Params) {
   const postData: PostData = await getSinglePost(postId);
 
