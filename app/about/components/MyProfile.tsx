@@ -60,7 +60,7 @@ const MyProfile = () => {
       speed={25}
       style={{ whiteSpace: 'pre-line', height: '360px', display: 'block' , width:'300px' , fontSize:'50px',}}
       sequence={[
-        `My Skills:\n` , 3000 , 
+        `My Skills:\n` , 2200 , 
         `HTML\nCSS/SCSS\nJavascript\nReact/Redux\nTypescript\nNext.js`
       ]}
       />

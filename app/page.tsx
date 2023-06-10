@@ -18,16 +18,16 @@ export default function Home() {
         </ParallaxLayer>
         <ParallaxLayer
           offset={0}
-          speed={2.5}
-          factor={2}
+          speed={3.5}
+          factor={3}
           style={{
             backgroundImage: `url(/img/night.jpg)`,
             backgroundSize: "cover",
             filter: "grayscale(100%)",
           }}
         />
-        <ParallaxLayer sticky={{ start: 0.06, end: 0.82 }}>
-          <article className={`${classes.article} ${classes.first}`}>
+        <ParallaxLayer sticky={{ start: 0.06, end: 0.82 }} >
+          <article className={`${classes.article} ${classes.first}`} style={{zIndex:100000}}>
             <h2>What is this about ? </h2>
             <p>
               This is my blog page where you will find articles covered by me
