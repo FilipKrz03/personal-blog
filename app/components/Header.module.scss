@@ -1,7 +1,7 @@
 @import "../variables.scss";
 
 .header {
-  z-index: 100!important;
+  z-index: 100 !important;
   position: relative;
   width: 100%;
   height: 80px;
@@ -76,11 +76,11 @@
     ul {
       position: absolute;
       transform: translateY(-500px);
-      li{
+      li {
         display: none;
       }
-    
-      &.active{
+
+      &.active {
         transform: translateY(0px);
         padding: 2em;
         top: 0px;
@@ -88,23 +88,23 @@
         align-items: center;
         height: 50vh;
         width: 100vw;
-        background-color: rgba(0, 0, 0, 1);    
-        li{
+        background-color: rgba(0, 0, 0, 1);
+        li {
           display: block;
         }
       }
     }
     .burger {
       display: block;
-      &.active{
-        .line:nth-child(2){
+      &.active {
+        .line:nth-child(2) {
           transform: scale(0);
           display: none;
         }
-        .line:nth-child(1){
-          transform:rotate(-50deg) translateX(-8px) translateY(-1px) ;
+        .line:nth-child(1) {
+          transform: rotate(-50deg) translateX(-8px) translateY(-1px);
         }
-        .line:nth-child(3){
+        .line:nth-child(3) {
           transform: rotate(-315deg) translateX(-8px) translateY(-2px);
         }
       }

@@ -9,31 +9,37 @@ import { navLinks } from "../helpers/navLinks";
 const Header = () => {
   const pathname = usePathname();
 
-  const [isMobileMenuActive , setIsMobileMenuActive] = useState<boolean>(false);
+  const [isMobileMenuActive, setIsMobileMenuActive] = useState<boolean>(false);
 
   return (
     <header className={classes.header}>
-      <ul className={`${isMobileMenuActive ? classes.active : ''}`}>
+      <ul className={`${isMobileMenuActive ? classes.active : ""}`}>
         {navLinks.map((link) => {
           return (
-            <motion.li 
+            <motion.li
               key={link.title}
-              className={link.path === pathname ? classes['active-link'] : ""}
+              className={link.path === pathname ? classes["active-link"] : ""}
               whileHover={{ scale: 1.3, filter: "blur(0.5px)" }}
-              whileTap={{scale:0.85}}
-              animate={{scale:1}} initial={{scale:0}}
+              whileTap={{ scale: 0.85 }}
+              animate={{ scale: 1 }}
+              initial={{ scale: 0 }}
             >
               <Link href={link.path}>{link.title}</Link>
             </motion.li>
           );
         })}
       </ul>
-      <button className={`${classes.burger} ${isMobileMenuActive ? classes.active : ''} `} onClick={()=>{
-        setIsMobileMenuActive(prevState => !prevState);
-      }}>
-        <div className={classes.line}/>
-        <div className={classes.line}/>
-        <div className={classes.line}/>
+      <button
+        className={`${classes.burger} ${
+          isMobileMenuActive ? classes.active : ""
+        } `}
+        onClick={() => {
+          setIsMobileMenuActive((prevState) => !prevState);
+        }}
+      >
+        <div className={classes.line} />
+        <div className={classes.line} />
+        <div className={classes.line} />
       </button>
     </header>
   );

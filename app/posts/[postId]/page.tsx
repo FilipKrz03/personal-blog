@@ -5,7 +5,6 @@ import getMainSmallPosts from "@/lib/getMainSmallPosts";
 import getMainPost from "@/lib/getMainPost";
 import getOtherPosts from "@/lib/getOtherPosts";
 
-
 type Params = {
   params: {
     postId: string;
@@ -24,17 +23,15 @@ export async function generateMetadata({ params: { postId } }: Params) {
 
 export default async function postDetail({ params: { postId } }: Params) {
   const postData: PostData = await getSinglePost(postId);
-  return <Article data={postData} />;  
-  
+  return <Article data={postData} />;
 }
 
 export async function generateStaticParams() {
-  
   const smallPosts: PostData[] = await getMainSmallPosts();
   const mainPost: PostData = await getMainPost();
-  const otherPosts:PostData[] = await getOtherPosts();
+  const otherPosts: PostData[] = await getOtherPosts();
 
-  const posts = [mainPost, ...smallPosts , ...otherPosts ];
+  const posts = [mainPost, ...smallPosts, ...otherPosts];
 
   return posts.map((post) => {
     return post.id;
