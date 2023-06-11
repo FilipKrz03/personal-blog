@@ -1,3 +1,7 @@
+## Personal Blog site in whick i use Next.js  , Contenful Cms (Post data is fetching from there), Scss
+## All sites are SSG which makes this website very fast 
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
