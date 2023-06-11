@@ -3,7 +3,6 @@
 # dependencies
 /node_modules
 /.pnp
-/lib/client.ts
 .pnp.js
 
 # testing
